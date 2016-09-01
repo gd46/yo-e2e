@@ -1,0 +1,15 @@
+{
+  "name": "generator-e2e",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "generators/e2e",
+    "generators/page-object"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.24.1"
+  }
+}
