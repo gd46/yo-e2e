@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var _ = require('lodash');
 module.exports = generators.Base.extend({
  
   prompting: function () {
@@ -15,10 +16,12 @@ module.exports = generators.Base.extend({
 
   writing: {
   	config: function () {
+      var camelCaseName = _.camelCase(this.props.name);
+      var kebabCaseName = _.kebabCase(this.props.name);
     	this.fs.copyTpl(
-              this.templatePath('__name__-page.js'),
-              this.destinationPath('test/page_objects/'+ this.props.name +'-page.js'), {
-              	name: this.props.name
+              this.templatePath('_template-page.js'),
+              this.destinationPath('test/page_objects/'+ kebabCaseName +'-page.js'), {
+              	camelCaseName: camelCaseName
               }
           );
   	}

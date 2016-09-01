@@ -10,6 +10,7 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "lodash": "^4.15.0",
     "yeoman-generator": "^0.24.1"
   }
 }
