@@ -1,5 +1,7 @@
 ## E2E-Cli
 
+[![Join the chat at https://gitter.im/doctrine/dbal](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yo-e2e/Lobby?source=orgpage)
+
 Prototype of a yo generator for scaffolding an automation framework based on protractor and cucumber
 
 ## Note
