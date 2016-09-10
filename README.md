@@ -25,7 +25,7 @@ The generated project has dependencies that require **Node 4.x.x and NPM 3.x.x**
 * [Generating an automation framework](#generating-an-automation-framework)
 * [What gets done for you](#what-gets-done-for-you)
 * [Available generators](#available-generators)
-* [What do I get when I generate a page object](#what-do-i-get-when-generate-a-page-object)
+* [What do I get when I generate a page object](#what-do-i-get-when-i-generate-a-page-object)
 * [Linting and formatting code](#linting-and-formatting-code)
 * [Development hints for making changes to yo e2e](#development-hints-for-making-changes-to-yo-e2e)
 
