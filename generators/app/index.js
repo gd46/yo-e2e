@@ -15,7 +15,7 @@ module.exports = generators.Base.extend({
     this.copy("_core.js", "test/e2e/plugins/core.js");
 
     this.copy("_e2e_framework_config.js", "test/e2e/config/e2e_framework_config.js");
-    this.copy("_utility", "test/e2e/utilities/util.js");
+    this.copy("_util", "test/e2e/utilities/util.js");
 
     this.copy("_cucumber.conf.js", "cucumber.conf.js");
     var packagejsonExists = this.fs.exists('package.json');
