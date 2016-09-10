@@ -6,13 +6,17 @@ Prototype of a yo generator for scaffolding an automation framework based on pro
 
 This project is a work in progress.
 
+## Goals of this project
+
+Coming Soon...
+
 ## Prerequisites
 
 The generated project has dependencies that require **Node 4.x.x and NPM 3.x.x**.
 
 ## Contributing
 
-Coming Soon...
+[Contributing](CONTRIBUTING.md)
 
 ## Table of Content
 
