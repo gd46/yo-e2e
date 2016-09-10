@@ -30,7 +30,7 @@ module.exports = generators.Base.extend({
       var camelCaseName = _.camelCase(this.props.name);
       var kebabCaseName = _.kebabCase(this.props.name);
       var team = this.props.team;
-      this.fs.copy('test/includes/page_objects.js', 'test/includes/page_objects.js', {
+      this.fs.copy('test/e2e/includes/page_objects.js', 'test/e2e/includes/page_objects.js', {
         process: function (content) {
           var requireStatement = camelCaseName + ": require('../page_objects/" + team + '/' + camelCaseName +"')." + camelCaseName + ',';
           var data = content.toString().split("\n");
@@ -52,7 +52,7 @@ module.exports = generators.Base.extend({
 
     	this.fs.copyTpl(
               this.templatePath('_template-page.js'),
-              this.destinationPath('test/page_objects/' + this.props.team + '/' + kebabCaseName +'-page.js'), {
+              this.destinationPath('test/e2e//page_objects/' + this.props.team + '/' + kebabCaseName +'-page.js'), {
               	camelCaseName: camelCaseName
               }
           );

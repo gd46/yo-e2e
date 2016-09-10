@@ -4,13 +4,15 @@ module.exports = generators.Base.extend({
 
   initializing: function () {
     // Set up automation framework files and folders
-    this.copy("_env.js", "test/support/env.js");
-    this.copy("_hooks.js", "test/support/hooks.js");
+    this.copy("_env.js", "test/e2e/support/env.js");
+    this.copy("_hooks.js", "test/e2e/support/hooks.js");
 
-    this.copy("_expected_conditions.js", "test/includes/expected_conditions.js");
-    this.copy("_external_globals.js", "test/includes/external_global.js");
-    this.copy("_internal_globals.js", "test/includes/internal_globals.js");
-    this.copy("_page_objects.js", "test/includes/page_objects.js");
+    this.copy("_expected_conditions.js", "test/e2e/includes/expected_conditions.js");
+    this.copy("_external_globals.js", "test/e2e/includes/external_global.js");
+    this.copy("_internal_globals.js", "test/e2e/includes/internal_globals.js");
+    this.copy("_page_objects.js", "test/e2e/includes/page_objects.js");
+
+    this.copy("_core.js", "test/e2e/plugins/core.js");
 
     
     this.copy("_cucumber.conf.js", "cucumber.conf.js");
