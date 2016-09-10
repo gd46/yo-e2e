@@ -4,7 +4,7 @@ We would love for you to contribute to yo-e2e and help make it even better
 than it is today! As a contributor, here are the guidelines we would like you
 to follow:
 
-## Check out any [open issues or feature requests](https://github.com/gd46/yo-e2e/issues) and create a [PR](#creating-a-pr) for review
+Check out any [open issues or feature requests](https://github.com/gd46/yo-e2e/issues) and create a [PR](#creating-a-pr) for review
 
 ## Question or Problem
 If you have questions about how to use yo-e2e, please [StackOverflow](http://stackoverflow.com/questions/tagged/yo-e2e). Please note that yo-e2e is still in early developer preview, and the core team's capacity to answer usage questions is limited. 
