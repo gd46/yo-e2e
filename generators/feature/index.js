@@ -34,12 +34,12 @@ module.exports = generators.Base.extend({
 
   writing: {
   	config: function () {
-      var camelCaseFeatureName = _.kebabCase(this.props.feature);
-      var featureFilePath = this.props.dir + camelCaseFeatureName + '.feature';
+      var kebabCaseFeatureName = _.kebabCase(this.props.feature);
+      var featureFilePath = this.props.dir + kebabCaseFeatureName + '.feature';
       this.fs.copyTpl(
               this.templatePath('_feature.feature'),
               this.destinationPath(featureFilePath), {
-              	camelCaseFeatureName: camelCaseFeatureName
+              	kebabCaseFeatureName: kebabCaseFeatureName
               }
           );
   	}

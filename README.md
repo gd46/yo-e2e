@@ -28,6 +28,7 @@ The generated project has dependencies that require **Node 4.x.x and NPM 3.x.x**
 * [What gets done for you](#what-gets-done-for-you)
 * [Available generators](#available-generators)
 * [What do I get when I generate a page object](#what-do-i-get-when-i-generate-a-page-object)
+* [What do I get when I generate a feature](#what-do-i-get-when-i-generate-a-feature)
 * [Linting and formatting code](#linting-and-formatting-code)
 * [Development hints for making changes to yo e2e](#development-hints-for-making-changes-to-yo-e2e)
 
@@ -77,7 +78,8 @@ You can find all possible blueprints in the table below:
 
 Scaffold 		| Usage
 --- 		 		| ----
-Page Object | yo e2e page-object
+Page Object | yo e2e:page-object
+Feature			| yo e2e:feature
 
 ### What do I get when I generate a page object?
 
@@ -97,6 +99,9 @@ function directDeposit() {
 
 module.exports.directDeposit = directDeposit;
 ```
+
+### What do I get when I generate a feature?
+A feature gets generated with the given name and in the given file path. The feature name gets inserted in kebab case. 
 
 ### Linting and formatting code
 
