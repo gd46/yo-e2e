@@ -29,19 +29,16 @@ module.exports = generators.Base.extend({
   	config: function () {
       var camelCaseName = _.camelCase(this.props.name);
       var kebabCaseName = _.kebabCase(this.props.name);
-
-
+      var team = this.props.team;
       this.fs.copy('test/includes/page_objects.js', 'test/includes/page_objects.js', {
         process: function (content) {
-          var requireStatement = camelCaseName + ": require('../page_objects/" + camelCaseName +"')." + camelCaseName + ',';
+          var requireStatement = camelCaseName + ": require('../page_objects/" + team + '/' + camelCaseName +"')." + camelCaseName + ',';
           var data = content.toString().split("\n");
           var found = false;
           var lineNumber = 0;
 
-          console.log('data', data);
           while(!found) {
           if(data[lineNumber] === '') {
-            console.log('line', data[lineNumber])
             var previousLine = lineNumber -1;
             data.splice(lineNumber, 0, indentString(requireStatement, 2));
             found = true;
