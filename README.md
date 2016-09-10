@@ -49,7 +49,23 @@ cd test
 
 ### What gets done for you?
 
-Coming Soon...
+Directory tree
+
+```
+	- test
+		- includes
+			- expected_conditions.js
+			- external_globals.js
+			- internal_globals.js
+			- page_objects.js
+		- page_objects
+		- support
+		 - env.js
+		 - hooks.js
+	cucumber.conf.js	
+```
+
+A test directory and all of the necessary files to start automation are included. A user will be able to generate a test directory and immediately start creating end-to-end tests. A structure and format are defined on how to begin.
 
 ### Available generators
 
@@ -63,7 +79,22 @@ Page Object | yo e2e page-object
 
 ### What do I get when I generate a page object?
 
-Coming Soon...
+You get a default page object shell with the name of the page object you asked for following camelcase format, in the directory you asked for. 
+
+See below example: 
+
+```
+'use strict';
+
+function directDeposit() {
+
+	/*
+		You should use css selectors as your only selector method
+	*/
+}
+
+module.exports.directDeposit = directDeposit;
+```
 
 ### Linting and formatting code
 
