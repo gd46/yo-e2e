@@ -65,6 +65,10 @@ Directory tree
 		- support
 		 - env.js
 		 - hooks.js
+		- utilities
+			- util.js 
+		- config
+			- e2e_framework_config.js	
 	cucumber.conf.js	
 ```
 
