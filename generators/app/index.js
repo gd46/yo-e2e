@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var shell = require('shelljs');
 module.exports = generators.Base.extend({
 
   initializing: function () {
@@ -13,5 +14,26 @@ module.exports = generators.Base.extend({
 
     
     this.copy("cucumber.conf.js", "cucumber.conf.js");
-  }
+    var packagejsonExists = this.fs.exists('package.json');
+    if(!packagejsonExists) {
+        // this.fs.copyTpl('package.json', 'package.json');
+        // this.fs.copyTpl(
+        //       this.templatePath('package.json'),
+        //       this.destinationPath('package.json')
+        //   );
+        console.log('No package.json');
+        shell.exec('npm init', function(err, stdout, stderr) {
+          if (err) {
+            console.error('error',err);
+            return;
+          }
+          console.log('stderr', stderr);
+          console.log('success',stdout);
+        });
+    }
+  },
+
+  install: function () {
+     // this.npmInstall(['cucumber'], { 'saveDev': true });
+  },
 });

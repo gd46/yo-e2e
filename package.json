@@ -13,5 +13,8 @@
     "lodash": "^4.15.0",
     "indent-string": "^3.0.0",
     "yeoman-generator": "^0.24.1"
+  },
+  "devDependencies": {
+    "shelljs": "^0.7.4"
   }
 }
