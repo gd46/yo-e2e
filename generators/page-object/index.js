@@ -52,7 +52,7 @@ module.exports = generators.Base.extend({
 
     	this.fs.copyTpl(
               this.templatePath('_template-page.js'),
-              this.destinationPath('test/e2e//page_objects/' + this.props.team + '/' + kebabCaseName +'-page.js'), {
+              this.destinationPath('test/e2e/page_objects/' + this.props.team + '/' + kebabCaseName +'-page.js'), {
               	camelCaseName: camelCaseName
               }
           );
