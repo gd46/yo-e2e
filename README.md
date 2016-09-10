@@ -6,9 +6,9 @@ Prototype of a yo generator for scaffolding an automation framework based on pro
 
 This project is a work in progress.
 
-## Goals of this project
+## Goal of this project
 
-Coming Soon...
+To generate a powerful automation framework that is reusable, and will make it easier to create and execute consistent end-to-end tests
 
 ## Prerequisites
 
@@ -20,7 +20,15 @@ The generated project has dependencies that require **Node 4.x.x and NPM 3.x.x**
 
 ## Table of Content
 
-Coming Soon...
+* [Installation](#instalation)
+* [Usage](#usage)
+* [Generating an automation framework](#generating-an-automation-framework)
+* [What gets done for you?](#what-gets-done-for-you?)
+* [Available generators](#available-generators)
+* [What do I get when I generate a page object?](#what-do-i-get-when-generate-a-page-object?)
+* [Linting and formatting code](#linting-and-formatting-code)
+* [Development hints for making changes to yo e2e](#development-hints-for-making-changes-to-yo-e2e)
+
 
 ## Installation
 
