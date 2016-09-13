@@ -4,6 +4,7 @@ var indentString = require('indent-string');
 module.exports = generators.Base.extend({
 
   prompting: function () {
+    //  TODO: Write tests?
     return this.prompt([{
       type    : 'input',
       name    : 'name',
@@ -26,6 +27,7 @@ module.exports = generators.Base.extend({
   },
 
   writing: {
+    //  TODO: Write tests?
   	config: function () {
       var camelCaseName = _.camelCase(this.props.name);
       var kebabCaseName = _.kebabCase(this.props.name);
