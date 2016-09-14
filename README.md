@@ -136,6 +136,13 @@ cd test
 Please read the official [npm-link documentation](https://www.npmjs.org/doc/cli/npm-link.html)
 and the [npm-link cheatsheet](http://browsenpm.org/help#linkinganynpmpackagelocally) for more information.
 
+## Resources
+
+* [Yeoman test helper](http://yeoman.io/generator/module-test_helpers.html)
+* [Yeoman assert](https://github.com/yeoman/yeoman-assert)
+* [Mocha](https://mochajs.org/)
+* [Chia](http://chaijs.com/)
+* [Chai-spies](http://chaijs.com/plugins/chai-spies/)
 
 ## License
 

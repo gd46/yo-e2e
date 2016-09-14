@@ -15,6 +15,13 @@
     "yeoman-generator": "^0.24.1"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-fs": "^0.1.0",
+    "chai-spies": "^0.7.1",
+    "mocha": "^3.0.2",
     "shelljs": "^0.7.4"
+  },
+  "scripts": {
+    "test": "mocha tests --opts ./tests/mocha.ops"
   }
 }
