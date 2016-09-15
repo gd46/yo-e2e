@@ -23,26 +23,27 @@ module.exports = generators.Base.extend({
     this.copy("_cucumber.conf.js", "cucumber.conf.js");
 
 
-    // TODO: we should just write the file and not care if there is one there
-    var packagejsonExists = this.fs.exists('package.json');
-
-    if(!packagejsonExists) {
-      this.fs.copyTpl(
-          this.templatePath('_package.json'),
-          this.destinationPath('package.json')
-      );
-
-      // if we want to output anything we should use yosay and chalk
-      console.log('No package.json');
-      shell.exec('npm init', function (err, stdout, stderr) {
-        if (err) {
-          console.error('error', err);
-          return;
-        }
-        console.log('stderr', stderr);
-        console.log('success', stdout);
-      });
-    }
+    // // TODO: we should just write the file and not care if there is one there
+    this.copy('_package.json','package.json');
+    // var packagejsonExists = this.fs.exists('package.json');
+    //
+    // if(!packagejsonExists) {
+    //   this.fs.copyTpl(
+    //       this.templatePath('_package.json'),
+    //       this.destinationPath('package.json')
+    //   );
+    //
+    //   // if we want to output anything we should use yosay and chalk
+    //   console.log('No package.json');
+    //   shell.exec('npm init', function (err, stdout, stderr) {
+    //     if (err) {
+    //       console.error('error', err);
+    //       return;
+    //     }
+    //     console.log('stderr', stderr);
+    //     console.log('success', stdout);
+    //   });
+    // }
   },
 
   install: function () {
