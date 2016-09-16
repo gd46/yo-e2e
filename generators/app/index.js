@@ -1,8 +1,54 @@
 var generators = require('yeoman-generator');
-var shell = require('shelljs');
+var shelljs = require('shelljs');
+var yosay = require('yosay');
+var chalk = require('chalk');
 module.exports = generators.Base.extend({
 
   initializing: function () {
+  },
+  prompting: function () {
+    var packagejsonExists = this.fs.exists('package.json');
+    if(!packagejsonExists) {
+        shelljs.echo(yosay(chalk.yellow('You do not have a package.json yet, we will help you generate one')));
+        return this.prompt([{
+          type    : 'input',
+          name    : 'name',
+          message : 'name',
+          default : this.appname // Default to current folder name
+        }, {
+          type  : 'input',
+          name  : 'version',
+          message : 'version',
+          default: '1.0.0'
+        }, {
+          type  : 'input',
+          name  : 'description',
+          message : 'description',
+          default: ''
+        }, {
+          type  : 'input',
+          name  : 'main',
+          message : 'main',
+          default: 'index.js'
+        }, {
+          type  : 'input',
+          name  : 'version',
+          message : 'version',
+          default: '1.0.0'
+        }, {
+          type  : 'input',
+          name  : 'author',
+          message : 'author',
+          default: ''
+        }, {
+          type  : 'input',
+          name  : 'license',
+          message : 'license',
+          default: 'MIT'
+        }]).then(function (answers) {
+          this.props = answers;
+        }.bind(this));
+    }
   },
   writing: function () {
 
@@ -29,19 +75,16 @@ module.exports = generators.Base.extend({
     if(!packagejsonExists) {
       this.fs.copyTpl(
           this.templatePath('_package.json'),
-          this.destinationPath('package.json')
+          this.destinationPath('package.json'),
+          {
+            name: this.props.name,
+            version: this.props.version,
+            description: this.props.description,
+            main: this.props.main,
+            author: this.props.author, 
+            license: this.props.license
+          }
       );
-
-      // if we want to output anything we should use yosay and chalk
-      console.log('No package.json');
-      shell.exec('npm init', function (err, stdout, stderr) {
-        if (err) {
-          console.error('error', err);
-          return;
-        }
-        console.log('stderr', stderr);
-        console.log('success', stdout);
-      });
     }
   },
 
