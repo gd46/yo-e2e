@@ -33,6 +33,10 @@ describe('Generate feature ', function () {
     it('should write test/e2e/features/test.feature', function () {
       assert.file('test/e2e/features/test.feature');
     });
+
+    it('should write Feature: name from prompt', function () {
+    	assert.fileContent('test/e2e/features/test.feature', /Feature: test.feature/);
+    });
   });
 
   describe('with file directory:', function () {
