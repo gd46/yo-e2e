@@ -5,10 +5,22 @@ var chai = require('chai'),
     path = require('path'),
     assert = require('yeoman-assert');
 
+
 describe('Generate feature ', function () {
   before(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
     .toPromise();
+  });
+
+  describe('with default prompt answers:', function () {
+  	beforeEach(function () {
+	    return helpers.run(path.join(__dirname, '../generators/feature'))
+	    .toPromise();
+	  });
+
+    it('should write test/e2e/features/test.feature', function () {
+      assert.file('test/e2e/features/' + this.appname + '.feature');
+    });
   });
 
   describe('with feature file name:', function () {
