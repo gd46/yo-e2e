@@ -26,16 +26,16 @@ describe('Generate feature ', function () {
   describe('with feature file name:', function () {
   	beforeEach(function () {
 	    return helpers.run(path.join(__dirname, '../generators/feature'))
-	    .withPrompts({ feature: 'test' })
+	    .withPrompts({ feature: 'custom-name' })
 	    .toPromise();
 	  });
 
-    it('should write test/e2e/features/test.feature', function () {
-      assert.file('test/e2e/features/test.feature');
+    it('should write test/e2e/features/custom-name.feature', function () {
+      assert.file('test/e2e/features/custom-name.feature');
     });
 
     it('should write Feature: name from prompt', function () {
-    	assert.fileContent('test/e2e/features/test.feature', /Feature: test.feature/);
+    	assert.fileContent('test/e2e/features/custom-name.feature', /Feature: custom-name.feature/);
     });
   });
 
@@ -43,14 +43,14 @@ describe('Generate feature ', function () {
   	beforeEach(function () {
 	    return helpers.run(path.join(__dirname, '../generators/feature'))
 	    .withPrompts({ 
-	    	feature: 'test',
+	    	feature: 'custom-name',
 	    	dir: 'test/e2e/features/pay/'
 	    })
 	    .toPromise();
 	  });
 
-    it('should write test/e2e/features/pay/test.feature', function () {
-      assert.file('test/e2e/features/pay/test.feature');
+    it('should write test/e2e/features/pay/custom-name.feature', function () {
+      assert.file('test/e2e/features/pay/custom-name.feature');
     });
   });
 });
