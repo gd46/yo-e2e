@@ -7,7 +7,7 @@ module.exports = generators.Base.extend({
       type    : 'input',
       name    : 'feature',
       message : 'Feature file name',
-      default : this.appname, // Default to current folder name
+      default : 'test',
       validate: function (input) {
         if(_.isUndefined(input) || _.isNull(input) || input.trim() === '') {
           return 'Please define a name for your feature';

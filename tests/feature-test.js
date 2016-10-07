@@ -19,7 +19,7 @@ describe('Generate feature ', function () {
 	  });
 
     it('should write test/e2e/features/test.feature', function () {
-      assert.file('test/e2e/features/' + this.appname + '.feature');
+      assert.file('test/e2e/features/test.feature');
     });
   });
 
