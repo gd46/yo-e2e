@@ -2,9 +2,22 @@ var generators = require('yeoman-generator');
 var shelljs = require('shelljs');
 var yosay = require('yosay');
 var chalk = require('chalk');
+
 module.exports = generators.Base.extend({
 
+  paths: function () {
+    this.sourceRoot('node_modules/e2e_framework/lib/templates');
+  },
   initializing: function () {
+  },
+  install: function () {
+    this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
+    // this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
+    // this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
+    // this.npmInstall(['lodash@^4.13.1'], {'saveDev': true});
+    // this.npmInstall(['cucumber@1.3.0'], {'saveDev': true});
+    // this.npmInstall(['protractor@3.3.0'], {'saveDev': true});
+    // this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
   },
   prompting: function () {
     var packagejsonExists = this.fs.exists('package.json');
@@ -50,23 +63,23 @@ module.exports = generators.Base.extend({
         }.bind(this));
     }
   },
-  writing: function () {
+  end: function () {
 
-    this.copy("_env.js", "test/e2e/features/support/env.js");
-    this.copy("_hooks.js", "test/e2e/features/support/hooks.js");
+    this.copy("app/env.js", "test/e2e/features/support/env.js");
+    this.copy("app/hooks.js", "test/e2e/features/support/hooks.js");
 
-    this.copy("_expected_conditions.js", "test/e2e/includes/expected_conditions.js");
-    this.copy("_external_globals.js", "test/e2e/includes/external_global.js");
-    this.copy("_internal_globals.js", "test/e2e/includes/internal_globals.js");
-    this.copy("_page_objects.js", "test/e2e/includes/page_objects.js");
+    this.copy("app/expected_conditions.js", "test/e2e/includes/expected_conditions.js");
+    this.copy("app/external_globals.js", "test/e2e/includes/external_global.js");
+    this.copy("app/internal_globals.js", "test/e2e/includes/internal_globals.js");
+    this.copy("app/page_objects.js", "test/e2e/includes/page_objects.js");
 
-    this.copy("_core.js", "test/e2e/plugins/core.js");
+    this.copy("app/core.js", "test/e2e/plugins/core.js");
 
-    this.copy("_e2e_framework_config.js", "test/e2e/config/e2e_framework_config.js");
+    this.copy("app/e2e_framework_config.js", "test/e2e/config/e2e_framework_config.js");
 
-    this.copy("_util.js", "test/e2e/utilities/util.js");
+    this.copy("app/util.js", "test/e2e/utilities/util.js");
 
-    this.copy("_cucumber.conf.js", "cucumber.conf.js");
+    this.copy("app/cucumber.conf.js", "cucumber.conf.js");
 
 
     // TODO: we should just write the file and not care if there is one there
@@ -86,14 +99,5 @@ module.exports = generators.Base.extend({
           }
       );
     }
-  },
-
-  install: function () {
-    // this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
-    // this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
-    // this.npmInstall(['lodash@^4.13.1'], {'saveDev': true});
-    // this.npmInstall(['cucumber@1.3.0'], {'saveDev': true});
-    // this.npmInstall(['protractor@3.3.0'], {'saveDev': true});
-    // this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
   }
 });
