@@ -11,7 +11,7 @@ module.exports = generators.Base.extend({
   initializing: function () {
   },
   install: function () {
-    this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
+    // this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
     // this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
     // this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
     // this.npmInstall(['lodash@^4.13.1'], {'saveDev': true});
@@ -20,47 +20,20 @@ module.exports = generators.Base.extend({
     // this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
   },
   prompting: function () {
-    var packagejsonExists = this.fs.exists('package.json');
-    if(!packagejsonExists) {
-        shelljs.echo(yosay(chalk.yellow('You do not have a package.json yet, we will help you generate one')));
-        return this.prompt([{
-          type    : 'input',
-          name    : 'name',
-          message : 'name',
-          default : this.appname // Default to current folder name
-        }, {
-          type  : 'input',
-          name  : 'version',
-          message : 'version',
-          default: '1.0.0'
-        }, {
-          type  : 'input',
-          name  : 'description',
-          message : 'description',
-          default: ''
-        }, {
-          type  : 'input',
-          name  : 'main',
-          message : 'main',
-          default: 'index.js'
-        }, {
-          type  : 'input',
-          name  : 'version',
-          message : 'version',
-          default: '1.0.0'
-        }, {
-          type  : 'input',
-          name  : 'author',
-          message : 'author',
-          default: ''
-        }, {
-          type  : 'input',
-          name  : 'license',
-          message : 'license',
-          default: 'MIT'
-        }]).then(function (answers) {
-          this.props = answers;
-        }.bind(this));
+    shelljs.echo(yosay(chalk.yellow('Welcome! Let us help you get started with an automation framework')));
+    return this.prompt([{
+      type    : 'list',
+      name    : 'framework',
+      message : 'What framework would you prefer to use?',
+      choices:['cucumber'],
+      default : 'cucumber'
+    }]).then(function (answers) {
+      this.props = answers;
+    }.bind(this));
+  },
+  writing: function () {
+    if(this.props.framework === 'cucumber') {
+      this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
     }
   },
   end: function () {
@@ -80,24 +53,5 @@ module.exports = generators.Base.extend({
     this.copy("app/util.js", "test/e2e/utilities/util.js");
 
     this.copy("app/cucumber.conf.js", "cucumber.conf.js");
-
-
-    // TODO: we should just write the file and not care if there is one there
-    var packagejsonExists = this.fs.exists('package.json');
-
-    if(!packagejsonExists) {
-      this.fs.copyTpl(
-          this.templatePath('_package.json'),
-          this.destinationPath('package.json'),
-          {
-            name: this.props.name,
-            version: this.props.version,
-            description: this.props.description,
-            main: this.props.main,
-            author: this.props.author, 
-            license: this.props.license
-          }
-      );
-    }
   }
 });
