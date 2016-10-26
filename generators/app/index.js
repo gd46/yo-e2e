@@ -8,17 +8,6 @@ module.exports = generators.Base.extend({
   paths: function () {
     this.sourceRoot('node_modules/e2e_framework/lib/templates');
   },
-  initializing: function () {
-  },
-  install: function () {
-    // this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
-    // this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
-    // this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
-    // this.npmInstall(['lodash@^4.13.1'], {'saveDev': true});
-    // this.npmInstall(['cucumber@1.3.0'], {'saveDev': true});
-    // this.npmInstall(['protractor@3.3.0'], {'saveDev': true});
-    // this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
-  },
   prompting: function () {
     shelljs.echo(yosay(chalk.yellow('Welcome! Let us help you get started with an automation framework')));
     return this.prompt([{
