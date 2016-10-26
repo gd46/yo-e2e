@@ -5,9 +5,6 @@ var chalk = require('chalk');
 
 module.exports = generators.Base.extend({
 
-  paths: function () {
-    this.sourceRoot('node_modules/e2e_framework/lib/templates');
-  },
   prompting: function () {
     shelljs.echo(yosay(chalk.yellow('Welcome! Let us help you get started with an automation framework')));
     return this.prompt([{
@@ -22,6 +19,7 @@ module.exports = generators.Base.extend({
   },
   writing: function () {
     if(this.props.framework === 'cucumber') {
+      this.sourceRoot('node_modules/e2e_framework/lib/templates');
       this.npmInstall(['e2e_framework@https://github.com/gd46/e2e_framework']);
     }
   },
