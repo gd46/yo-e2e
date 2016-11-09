@@ -14,7 +14,8 @@
   "dependencies": {
     "lodash": "^4.15.0",
     "indent-string": "^3.0.0",
-    "yeoman-generator": "^0.24.1"
+    "yeoman-generator": "^0.24.1",
+    "yargs": "^3.32.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

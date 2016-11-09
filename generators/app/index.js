@@ -40,6 +40,9 @@ module.exports = generators.Base.extend({
     this.copy("util.js", "test/e2e/utilities/util.js");
 
     this.copy("cucumber.conf.js", "cucumber.conf.js");
+
+    this.copy("test.feature", "test/e2e/features/test.feature");
+    this.copy("test_steps", "test/e2e/features/step_definitions");
   },
   install: function () {
     this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
