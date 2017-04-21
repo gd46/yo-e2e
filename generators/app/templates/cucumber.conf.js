@@ -1,4 +1,4 @@
-var e2eConfig = require('test/e2e/config/e2e_framework_config');
+var e2eConfig = require('./test/e2e/config/e2e_framework_config');
 exports.config = {
   // protractor configuration
   specs: [
@@ -6,7 +6,7 @@ exports.config = {
   ],
   framework: 'custom',
   // path relative to the current config file
-  frameworkPath: require.resolve('protractor-cucumber-framework'),
+  frameworkPath: require.resolve('./test/e2e/node_modules/protractor-cucumber-framework'),
   chromeOnly: false,
   allScriptsTimeout: e2eConfig.defaultAllScriptsTimeout,
   getPageTimeout: e2eConfig.defaultGetPageTimeout,

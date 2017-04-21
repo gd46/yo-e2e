@@ -42,14 +42,16 @@ module.exports = generators.Base.extend({
     this.copy("cucumber.conf.js", "cucumber.conf.js");
 
     this.copy("test.feature", "test/e2e/features/test.feature");
-    this.copy("test_steps", "test/e2e/features/step_definitions");
-  },
-  install: function () {
-    this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
-    this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
-    this.npmInstall(['lodash@^4.13.1'], {'saveDev': true});
-    this.npmInstall(['cucumber@1.3.0'], {'saveDev': true});
-    this.npmInstall(['protractor@3.3.0'], {'saveDev': true});
-    this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
+    this.copy("test_steps.js", "test/e2e/features/step_definitions/test_steps.js");
+
+    this.copy("package.json", "test/e2e/package.json");
   }
+  // install: function () {
+  //   this.npmInstall(['chai@^3.5.0'], {'saveDev': true});
+  //   this.npmInstall(['chai-as-promised@^5.3.0'], {'saveDev': true});
+  //   this.npmInstall(['lodash@^4.3.0'], {'saveDev': true});
+  //   this.npmInstall(['cucumber@1.3.1'], {'saveDev': true});
+  //   this.npmInstall(['protractor@5.1.1'], {'saveDev': true});
+  //   this.npmInstall(['protractor-cucumber-framework@^0.6.0'], {'saveDev': true});
+  // }
 });
