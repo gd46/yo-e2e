@@ -26,8 +26,8 @@ describe('Writing generated ', function () {
     it('should write test/e2e/includes/expected_conditions.js', function () {
       assert.file('test/e2e/includes/expected_conditions.js');
     });
-    it('should write test/e2e/includes/external_global.js', function () {
-      assert.file('test/e2e/includes/external_global.js');
+    it('should write test/e2e/includes/external_globals.js', function () {
+      assert.file('test/e2e/includes/external_globals.js');
     });
     it('should write test/e2e/includes/internal_globals.js', function () {
       assert.file('test/e2e/includes/internal_globals.js');
