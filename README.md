@@ -16,7 +16,7 @@ To generate a powerful automation framework that is reusable, and will make it e
 
 ## Prerequisites
 
-The generated project has dependencies that require **Node 4.x.x and NPM 3.x.x**.
+The generated project has dependencies that require **Node 6.x.x or higher and NPM 3.x.x and Java 1.8**.
 
 ## Contributing
 
