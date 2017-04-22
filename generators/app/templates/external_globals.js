@@ -1,4 +1,4 @@
-var chai = require('../node_modules/chai');
-var chaiAsPromised = require('../node_modules/chai-as-promised');
+var chai = require('chai');
+var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 global.expect = chai.expect;

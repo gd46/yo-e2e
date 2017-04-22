@@ -22,6 +22,12 @@ describe('Writing generated ', function () {
     })
   });
 
+  describe('Package json:', function () {
+    it('should write package.json', function () {
+      assert.file('package.json');
+    });
+  });
+
   describe('includes files:', function () {
     it('should write test/e2e/includes/expected_conditions.js', function () {
       assert.file('test/e2e/includes/expected_conditions.js');

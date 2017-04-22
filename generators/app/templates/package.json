@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "protractor cucumber.conf.js",
+    "update": "webdriver-manager update",
+    "update-test": "npm run update && npm run test"
   },
   "author": "",
   "license": "ISC",
